@@ -167,13 +167,16 @@ public class CsvLoader{
 
 	// ブラウザ名とIDを指定して、AsTestResultTableからテスト詳細を取得します。
 	private XmlNode GetTestDetail(string id, XmlDocument xml, string userAgent){
-		foreach(var table in AsTestResultTables){
-			if(table.UserAgent.Equals(userAgent, StringComparison.InvariantCultureIgnoreCase)){
-				XmlNode result = table.GetXmlById(id, xml);
-				if(result != null) return result;
+		try{
+			foreach(var table in AsTestResultTables){
+				if(table.UserAgent.Equals(userAgent, StringComparison.InvariantCultureIgnoreCase)){
+					XmlNode result = table.GetXmlById(id, xml);
+					if(result != null) return result;
+				}
 			}
-		}
-		throw new Exception(string.Format("ID:{0}, UA:{1}の詳細テストデータがみつかりませんでした。", id, userAgent));
+		}catch(Exception){}
+		Console.WriteLine("ID:{0}, UA:{1}の詳細テストデータがみつかりませんでした。", id, userAgent);
+		return xml.CreateDocumentFragment();
 	}
 
 

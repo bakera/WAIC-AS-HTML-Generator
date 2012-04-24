@@ -27,7 +27,7 @@ public class App{
 
 			return 0;
 		} catch(Exception e){
-			Console.WriteLine(e);
+			Console.Error.WriteLine(e);
 			return 1;
 		}
 	}

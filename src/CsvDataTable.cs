@@ -203,19 +203,26 @@ public abstract class CsvDataTable : DataTable{
 
 
 	public static XmlElement AppendElement(XmlNode target, string elementName, object inner){
-		XmlElement e = target.OwnerDocument.CreateElement(elementName);
-		if(inner is XmlNode){
-			XmlNode innerNode = inner as XmlNode;
+		try{
+			XmlElement e = target.OwnerDocument.CreateElement(elementName);
+			if(inner is XmlNode){
+				XmlNode innerNode = inner as XmlNode;
 
-			if(string.IsNullOrEmpty(innerNode.InnerText)) return null;
-			e.AppendChild(innerNode);
+				if(string.IsNullOrEmpty(innerNode.InnerText)) return null;
+				e.AppendChild(innerNode);
+				target.AppendChild(e);
+				return e;
+			}
+			if(string.IsNullOrEmpty(inner.ToString())) return null;
+			e.InnerText = inner.ToString();
 			target.AppendChild(e);
 			return e;
+		}catch (Exception e){
+			Console.Error.WriteLine("[{0}]", target);
+			Console.Error.WriteLine("[{0}]", elementName);
+			Console.Error.WriteLine("[{0}]", inner);
+			throw;
 		}
-		if(string.IsNullOrEmpty(inner.ToString())) return null;
-		e.InnerText = inner.ToString();
-		target.AppendChild(e);
-		return e;
 	}
 
 

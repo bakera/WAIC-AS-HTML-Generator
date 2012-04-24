@@ -28,9 +28,11 @@ public class AsAllTestResultTable : CsvDataTable{
 	}
 
 	public override XmlNode RowToXml(DataRow row, XmlDocument xml){
+		if(row == null){
+			return xml.CreateDocumentFragment();
+		}
 		XmlNode result = base.RowToXml(row,xml);
 		foreach(string s in ColumnSettings){
-//			Console.WriteLine(s);
 			if(s == null) continue;
 			if(s == IdColumnName) continue;
 			Object data = row[s];
