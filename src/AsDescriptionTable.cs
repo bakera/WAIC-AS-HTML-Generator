@@ -8,6 +8,8 @@ using System.Xml;
 
 public class AsDescriptionTable : CsvDataTable{
 
+// AS情報を格納するテーブル
+
 	public const string NoticeColumnName = "注意点";
 	public const string AlternateMethodColumnName = "代替もしくは推奨する方法";
 	public const string NoticeSeparateChars = "【】";

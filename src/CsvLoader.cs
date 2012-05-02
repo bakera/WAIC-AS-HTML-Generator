@@ -15,14 +15,24 @@ public class CsvLoader{
 	public const string OutputXmlDirName = "xml";
 	public const string OutputHtmlDirName = "html";
 
+	// IDとテストのタイプの対応表
+	// 手抜きなので、先頭文字が同じIDがあるとうまく動作しない
+	public Dictionary<string, string> TestIdPrefeixAndTestType = new Dictionary<string, string>(){
+		{"SCR", "Client-sideScripting"},
+		{"H", "HTMLandXHTML"},
+		{"C", "CSS"},
+		{"G", "General"},
+	};
+
+
 	private DirectoryInfo CsvDir{get;set;}
 	private DirectoryInfo OutputXmlDir{get;set;}
 	private DirectoryInfo OutputHtmlDir{get;set;}
 	private DirectoryInfo InputXsltDir{get;set;}
 	private SuccessCriteriaTable SuccessCriteriaTable{get;set;}
-	private AsAllTestResultTable AsAllTestResultTable{get;set;}
 	private AsTestResultTable[] AsTestResultTables{get;set;}
 	private AsDescriptionTable[] AsDescriptionTables{get;set;}
+	private string[] UserAgentList{get;set;}
 
 	private Dictionary<string, XslCompiledTransform> xslts = new Dictionary<string, XslCompiledTransform>();
 	private readonly string[] XsltFileNames = new string[]{"doc", "index", "cover"};
@@ -51,19 +61,12 @@ public class CsvLoader{
 
 		LoadTables(CsvDir);
 
-		// テスト全体XMLを作成
-		FileInfo allTestXmlFile = GetFileInfo(OutputXmlDir, "testresult.xml");
-		if(AsAllTestResultTable != null){
-			SaveXml(AsAllTestResultTable, allTestXmlFile);
-		} else {
-			Console.WriteLine("AsAllTestResultTableのロードに失敗したため、ファイル{0}を作成できませんでした。", allTestXmlFile.FullName);
-		}
-
 		// 説明XML/HTMLを保存、
 		foreach(AsDescriptionTable adt in AsDescriptionTables){
 			FileInfo outputFile = GetFileInfo(OutputXmlDir, adt.Name + ".xml");
 			XmlDocument xml = adt.ToXml();
-			SuccessCriteriaTable.SetSuccessCriteriaInfo(xml, adt.Name);
+			XmlNode scResult = SuccessCriteriaTable.GetSuccessCriteriaInfo(xml, adt.Name);
+			xml.DocumentElement.PrependChild(scResult);
 
 			SaveXml(xml, outputFile);
 			SaveAllChildren(adt);
@@ -88,9 +91,7 @@ public class CsvLoader{
 		List<AsTestResultTable> resultTableList = new List<AsTestResultTable>();
 		foreach(FileInfo f in csvFiles){
 			CsvDataTable cdt = CsvDataTable.CreateCsvDataTable(f);
-			if(cdt is AsAllTestResultTable){
-				AsAllTestResultTable = cdt as AsAllTestResultTable;
-			} else if(cdt is AsDescriptionTable) {
+			if(cdt is AsDescriptionTable) {
 				descTableList.Add(cdt as AsDescriptionTable);
 			} else if(cdt is AsTestResultTable) {
 				resultTableList.Add(cdt as AsTestResultTable);
@@ -102,6 +103,19 @@ public class CsvLoader{
 		}
 		AsDescriptionTables = descTableList.ToArray();
 		AsTestResultTables = resultTableList.ToArray();
+
+		//UAのリストを作成
+		resultTableList.Sort();
+		List<string> uaList = new List<string>();
+		foreach(var table in resultTableList){
+			if(!uaList.Contains(table.UserAgent)) uaList.Add(table.UserAgent);
+		}
+		UserAgentList = uaList.ToArray();
+
+		Console.WriteLine("以下のUserAgentのテスト結果をロードしました:");
+		foreach(string s in uaList){
+			Console.WriteLine(s);
+		}
 		Console.WriteLine("Load Completed.");
 	}
 
@@ -124,22 +138,33 @@ public class CsvLoader{
 	// DescriptionのXML/HTMLをすべてSaveします。
 	public void SaveAllChildren(AsDescriptionTable adt){
 		foreach(DataRow row in adt.Rows){
+			string id = row[AsDescriptionTable.IdColumnName].ToString();
+
 			XmlDocument xml = new XmlDocument(){XmlResolver = null};
 			XmlElement root = xml.CreateElement("description");
 			xml.AppendChild(root);
+
+			XmlElement successCriteriaElement = xml.CreateElement("successCriteria");
+			XmlNode scResult = SuccessCriteriaTable.GetSuccessCriteriaInfo(xml, adt.Name);
+			root.AppendChild(scResult);
+
+			string testType = GetTestTypeById(id);
+			if(testType != null){
+				XmlElement testTypeElement = xml.CreateElement("testType");
+				testTypeElement.InnerText = testType;
+				root.AppendChild(testTypeElement);
+			}
+
 			root.AppendChild(adt.RowToXml(row, xml));
-
-			string id = row[AsDescriptionTable.IdColumnName].ToString();
-
-			XmlElement testResult = xml.CreateElement("testResult");
-			XmlNode testResultNode = AsAllTestResultTable.GetXmlById(id, xml);
-			testResult.AppendChild(testResultNode);
-			root.AppendChild(testResult);
 
 			XmlElement testDetail = xml.CreateElement("testDetail");
 			XmlNode testDetailNode = GetTestDetail(id, xml);
-			testDetail.AppendChild(testDetailNode);
-			root.AppendChild(testDetail);
+			if(testDetail != null){
+				testDetail.AppendChild(testDetailNode);
+				root.AppendChild(testDetail);
+			} else {
+				Console.Error.WriteLine("testDetailが取得できませんでした : {0}", id);
+			}
 
 			FileInfo outputXml = GetFileInfo(OutputXmlDir, id + ".xml");
 			SaveXml(xml, outputXml);
@@ -153,10 +178,7 @@ public class CsvLoader{
 	// idを指定して、AsTestResultTableからテスト詳細を取得します。
 	private XmlNode GetTestDetail(string id, XmlDocument xml){
 		var result = xml.CreateDocumentFragment();
-		foreach(string userAgent in AsAllTestResultTable.ColumnSettings){
-			if(userAgent == null) continue;
-			if(userAgent == AsAllTestResultTable.IdColumnName) continue;
-
+		foreach(string userAgent in UserAgentList){
 			var resultElement = xml.CreateElement("result");
 			resultElement.SetAttribute("useragent", userAgent);
 			resultElement.AppendChild(GetTestDetail(id, xml, userAgent));
@@ -167,18 +189,30 @@ public class CsvLoader{
 
 	// ブラウザ名とIDを指定して、AsTestResultTableからテスト詳細を取得します。
 	private XmlNode GetTestDetail(string id, XmlDocument xml, string userAgent){
+		Console.WriteLine("ID:{0}, UA:{1}の詳細テストデータを検索します。", id, userAgent);
 		try{
 			foreach(var table in AsTestResultTables){
+				Console.WriteLine("テーブル:{0} (UA:{1})を検索。", table.Name, table.UserAgent);
 				if(table.UserAgent.Equals(userAgent, StringComparison.InvariantCultureIgnoreCase)){
 					XmlNode result = table.GetXmlById(id, xml);
 					if(result != null) return result;
 				}
 			}
-		}catch(Exception){}
+		}catch(Exception e){
+			Console.WriteLine("ID:{0}, UA:{1}の詳細テストデータの検索時にエラーが発生しました。[{2}]", id, userAgent, e);
+		}
 		Console.WriteLine("ID:{0}, UA:{1}の詳細テストデータがみつかりませんでした。", id, userAgent);
 		return xml.CreateDocumentFragment();
 	}
 
+
+	//IDを指定して、テスト種別 (HTMLandXHTMLなど) を取得します。
+	private string GetTestTypeById(string id){
+		foreach(string key in TestIdPrefeixAndTestType.Keys){
+			if(id.IndexOf(key) == 0) return TestIdPrefeixAndTestType[key];
+		}
+		return null;
+	}
 
 	// DirectoryInfoとファイル名からFileInfoを取得します。
 	private static FileInfo GetFileInfo(DirectoryInfo dir, string filename){

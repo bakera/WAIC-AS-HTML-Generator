@@ -101,6 +101,10 @@ public abstract class CsvDataTable : DataTable{
 
 	public XmlNode GetXmlById(string id, XmlDocument owner){
 		DataRow row = this.Rows.Find(id);
+		if(row == null){
+			Console.WriteLine("テーブル{0}にID:{1}のデータが見つかりませんでした。", this.Name, id);
+			return null;
+		}
 		return RowToXml(row, owner);
 	}
 
@@ -120,10 +124,7 @@ public abstract class CsvDataTable : DataTable{
 		string[][] alldata = LoadCSV(file);
 		CsvDataTable result = null;
 		try{
-			if(alldata[0][1].StartsWith("アクセシビリティサポーテッド検証結果一覧") || alldata[0][0].StartsWith("アクセシビリティサポーテッド検証結果一覧")){
-				result = new AsAllTestResultTable();
-				result.Name = "アクセシビリティサポーテッド検証結果一覧";
-			} else if(alldata[0][0].StartsWith("テストファイルNo.")){
+			if(alldata[0][0].StartsWith("テストファイルNo.")){
 				result = new AsDescriptionTable();
 				result.Name = Path.GetFileNameWithoutExtension(file.Name);
 			} else if(alldata[0][1].IndexOf("アクセシビリティサポーテッド検証結果") >= 0){
@@ -135,6 +136,7 @@ public abstract class CsvDataTable : DataTable{
 			Console.WriteLine("Load start: {0}", file.FullName);
 			result.Load(alldata);
 			Console.WriteLine("Loaded: {0} rows ({1} : {2})", result.Rows.Count, result.GetType(), result.Name);
+			
 			return result;
 		} catch (Exception e){
 			throw new Exception(string.Format("データが読めませんでした。{0} \n {1}", file.FullName, alldata[0][1]), e);
@@ -221,6 +223,7 @@ public abstract class CsvDataTable : DataTable{
 			Console.Error.WriteLine("[{0}]", target);
 			Console.Error.WriteLine("[{0}]", elementName);
 			Console.Error.WriteLine("[{0}]", inner);
+			Console.Error.WriteLine(e);
 			throw;
 		}
 	}

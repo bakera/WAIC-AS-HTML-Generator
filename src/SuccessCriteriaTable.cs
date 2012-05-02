@@ -75,13 +75,17 @@ public class SuccessCriteriaTable : CsvDataTable{
 	}
 
 	// 渡されたXMLに指定された達成基準の情報をセットします。
-	public void SetSuccessCriteriaInfo(XmlDocument xml, string id){
+	public XmlNode GetSuccessCriteriaInfo(XmlDocument xml, string id){
 		DataRow r = this.Rows.Find(id);
 
 		string name = r[NameColumnName].ToString();
 		string level = r[LevelColumnName].ToString();
 
 		XmlElement result = xml.CreateElement("SuccessCriteria");
+
+		XmlElement numberElement = xml.CreateElement("number");
+		numberElement.InnerText = id;
+		result.AppendChild(numberElement);
 
 		XmlElement nameElement = xml.CreateElement("name");
 		nameElement.InnerText = name;
@@ -91,7 +95,7 @@ public class SuccessCriteriaTable : CsvDataTable{
 		levelElement.InnerText = level;
 		result.AppendChild(levelElement);
 
-		xml.DocumentElement.PrependChild(result);
+		return result;
 	}
 
 
