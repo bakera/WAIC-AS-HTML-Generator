@@ -144,9 +144,25 @@ public class CsvLoader{
 			XmlElement root = xml.CreateElement("description");
 			xml.AppendChild(root);
 
-			XmlElement successCriteriaElement = xml.CreateElement("successCriteria");
-			XmlNode scResult = SuccessCriteriaTable.GetSuccessCriteriaInfo(xml, adt.Name);
-			root.AppendChild(scResult);
+			// 達成基準の情報を追加
+			// ほかの達成基準からも参照されている可能性があるので全てのテーブルを見る
+			
+			int count = 0;
+			foreach(AsDescriptionTable otherAdt in AsDescriptionTables){
+				DataRow r = otherAdt.Rows.Find(id);
+				if(r != null){
+					XmlElement successCriteriaElement = xml.CreateElement("successCriteria");
+					XmlNode scResult = SuccessCriteriaTable.GetSuccessCriteriaInfo(xml, otherAdt.Name);
+					root.AppendChild(scResult);
+					
+					count++;
+				}
+			}
+
+			if(count > 1){
+				Console.Error.WriteLine("multiple use: {0} ", id);
+			}
+
 
 			string testType = GetTestTypeById(id);
 			if(testType != null){

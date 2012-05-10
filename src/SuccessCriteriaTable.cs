@@ -74,26 +74,30 @@ public class SuccessCriteriaTable : CsvDataTable{
 		}
 	}
 
-	// 渡されたXMLに指定された達成基準の情報をセットします。
+	// 指定された達成基準の情報を返します。
 	public XmlNode GetSuccessCriteriaInfo(XmlDocument xml, string id){
 		DataRow r = this.Rows.Find(id);
 
-		string name = r[NameColumnName].ToString();
-		string level = r[LevelColumnName].ToString();
+		XmlNode result = xml.CreateDocumentFragment();
 
-		XmlElement result = xml.CreateElement("SuccessCriteria");
+			string name = r[NameColumnName].ToString();
+			string level = r[LevelColumnName].ToString();
 
-		XmlElement numberElement = xml.CreateElement("number");
-		numberElement.InnerText = id;
-		result.AppendChild(numberElement);
+			XmlElement sc = xml.CreateElement("SuccessCriteria");
 
-		XmlElement nameElement = xml.CreateElement("name");
-		nameElement.InnerText = name;
-		result.AppendChild(nameElement);
+			XmlElement numberElement = xml.CreateElement("number");
+			numberElement.InnerText = id;
+			sc.AppendChild(numberElement);
 
-		XmlElement levelElement = xml.CreateElement("level");
-		levelElement.InnerText = level;
-		result.AppendChild(levelElement);
+			XmlElement nameElement = xml.CreateElement("name");
+			nameElement.InnerText = name;
+			sc.AppendChild(nameElement);
+
+			XmlElement levelElement = xml.CreateElement("level");
+			levelElement.InnerText = level;
+			sc.AppendChild(levelElement);
+			
+			result.AppendChild(sc);
 
 		return result;
 	}
