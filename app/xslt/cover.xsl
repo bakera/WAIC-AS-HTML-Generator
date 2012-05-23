@@ -15,17 +15,17 @@
 <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
 <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
 <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
-<title>アクセシビリティ・サポーテッド（AS）情報：2011年7月版 <xsl:value-of select="/AsDescription/@target" /></title>
+<title>アクセシビリティ・サポーテッド（AS）情報：2012年5月版 <xsl:value-of select="/AsDescription/@target" /></title>
 <style type="text/css">table{empty-cells: show;}tr.warn{background: #ffd;}tr.ng{background: #fdd;}</style>
 </head>
 <body>
 <div id="logo"><a href="http://www.ciaj.or.jp/access/web/"><img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" /></a></div>
-<h1>アクセシビリティ・サポーテッド（AS）情報：2011年7月版</h1>
+<h1>アクセシビリティ・サポーテッド（AS）情報：2012年5月版</h1>
 
 <ul>
-<li>公開日：2011年8月2日</li>
+<li>公開日：2012年5月15日</li>
 <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
-<li>前のバージョン：<a href="/access/web/docs/jis2010-as-understanding/201010/">2010年10月版（2010年11月1日公開）</a></li>
+<li>前のバージョン：<a href="/access/web/docs/jis2010-as-understanding/201107/">2011年7月版（2011年8月2日公開）</a></li>
 </ul>
 
 <h2>1. はじめに</h2>
@@ -48,8 +48,8 @@
 解説書」（"Understanding WCAG 2.0" の日本語訳）を参照のこと。</p>
 <ul>
 <li>JIS X 8341-3:2010「附属書A（参考）この規格を満たすウェブコンテンツ技術及びその実装方法の選び方」</li>
-<li><a href="http://www.ciaj.or.jp/access/web/docs/UNDERSTANDING-WCAG20/conformance.html#uc-accessibility-support-head">アクセシビリティ・サポーテッドを理解する｜WCAG 2.0 解説書</a></li>
-<li><a href="http://www.ciaj.or.jp/access/web/docs/UNDERSTANDING-WCAG20/appendixB.html">附録 B ウェブコンテンツ技術の使用法のアクセシビリティ・サポートを文書化する｜WCAG 2.0 解説書</a></li>
+<li><a href="http://waic.jp/docs/UNDERSTANDING-WCAG20/conformance.html#uc-accessibility-support-head">アクセシビリティ・サポーテッドを理解する｜WCAG 2.0 解説書</a></li>
+<li><a href="http://waic.jp/docs/UNDERSTANDING-WCAG20/appendixB.html">附録 B ウェブコンテンツ技術の使用法のアクセシビリティ・サポートを文書化する｜WCAG 2.0 解説書</a></li>
 </ul>
 <p>また、「使用するウェブコンテンツ技術の実装方法が達成基準を満たすことができるかどうかを確認することは，設計・開発する者の責任である。」とあ
 る。それを確認することをできるかぎり容易にするために、ウェブアクセシビリティ基盤委員会（WAIC）では、テストファイルを作成し、ブラウザや支援技
@@ -68,7 +68,7 @@
 
 <h4>例：「7.2.4.1 ブロックスキップに関する達成基準」（等級A）の場合</h4>
 
-<p>例えば、「7.2.4.1 ブロックスキップに関する達成基準」の意図を確認する際には、<a href="http://www.ciaj.or.jp/access/web/docs/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 解説書「ブロック・スキップ：達成基準 2.4.1 を理解する」</a>を
+<p>例えば、「7.2.4.1 ブロックスキップに関する達成基準」の意図を確認する際には、<a href="http://waic.jp/docs/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html">WCAG 2.0 解説書「ブロック・スキップ：達成基準 2.4.1 を理解する」</a>を
 参照する。「この達成基準の意図」と「達成基準 2.4.1 
 の具体的なメリット」を読むと、この達成基準は、主にスクリーンリーダーの利用者、キーボード又はキーボード・インタフェースだけを使用している利用者、
 そして画面拡大ソフトを使用している利用者が、ウェブページのメインコンテンツへ素早くかつ容易に到達できるようにすることを意図していることがわかる。</p>
@@ -90,13 +90,13 @@
 
 <h3>4-1. 最新の「アクセシビリティ・サポーテッド検証結果」を参照する</h3>
 
-<p>「<a href="http://www.ciaj.or.jp/access/web/docs/jis2010/as.html">アクセシビリティ・サポーテッド検証結果</a>」は、必要に応じて随時更新されていく予定である。アクセシビリティ・サポーテッドであるかどうかを判断する際には、その時点での最新の検証結果を参照すること。なお、本文書を作成している時点での最新版は2010年8月版である。</p>
+<p>「<a href="http://waic.jp/docs/jis2010/as.html">アクセシビリティ・サポーテッド検証結果</a>」は、必要に応じて随時更新されていく予定である。アクセシビリティ・サポーテッドであるかどうかを判断する際には、その時点での最新の検証結果を参照すること。なお、本文書を作成している時点での最新版は2010年8月版である。</p>
 
 <h3>4-2. 検証結果が全て「○」となっている実装方法</h3>
 
 <p>検証結果が全て「○」となっている実装方法は、アクセシビリティ・サポーテッドであると判断する際の参考として用いることができる。</p>
 
-<p>ただし、「アクセシビリティ・サポーテッド検証結果」は、ウェブアクセシビリティ基盤委員会（WAIC）が選定した主要なOSとユーザーエージェント（ブラウザ及び支援技術）の組合せによる検証結果であり、それ以外の利用環境を想定すべき場合には「<a href="http://www.ciaj.or.jp/access/web/docs/jis2010/as-tests.html">AS情報を作成する際に必要となるテストファイル</a>」等を用いて、各自で検証を行う必要がある。</p>
+<p>ただし、「アクセシビリティ・サポーテッド検証結果」は、ウェブアクセシビリティ基盤委員会（WAIC）が選定した主要なOSとユーザーエージェント（ブラウザ及び支援技術）の組合せによる検証結果であり、それ以外の利用環境を想定すべき場合には「<a href="http://waic.jp/docs/jis2010/as-tests.html">AS情報を作成する際に必要となるテストファイル</a>」等を用いて、各自で検証を行う必要がある。</p>
 
 <h3>4-3. 検証結果に「△」または「×」が含まれている実装方法</h3>
 

@@ -6,22 +6,33 @@
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
     <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-    <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
+    <link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
     <title>アクセシビリティ・サポーテッド（AS）情報：SCR021</title>
     <style type="text/css">table{empty-cells: show;}</style>
   </head>
   <body>
     <div id="logo">
-      <a href="http://www.ciaj.or.jp/access/web/">
-        <img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
+      <a href="http://waic.jp/">
+        <img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
       </a>
     </div>
     <h1>アクセシビリティ・サポーテッド（AS）情報：SCR021</h1>
     <ul>
-      <li>公開日：2011年8月2日</li>
+      <li>公開日：2012年5月15日</li>
       <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
     </ul>
-    <h2>SCR021DOM（ドキュメント・オブジェクト・モデル）を用いて、ページにコンテンツを追加する</h2>
+    <h2>SCR021: DOM（ドキュメント・オブジェクト・モデル）を用いて、ページにコンテンツを追加する</h2>
+    <h3>関連する達成基準の実装方法一覧</h3>
+    <p>
+      <a href="7.1.3.1.html">7.1.3.1情報及び関係性に関する達成基準 (等級A)</a>
+    </p>
+    <p>
+      <a href="7.4.1.2.html">7.4.1.2プログラムが解釈可能な識別名，役割及び設定可能な値に関する達成基準 (等級A)</a>
+    </p>
+    <h3>テストファイル</h3>
+    <p>
+      <a href="&#xA;http://waic.jp/docs/jis2010-as-tests/201008/A/Client-sideScripting/SCR021.html">SCR021のテストファイル</a>
+    </p>
     <div class="ok">
       <h3>見解</h3>
       <p>達成可能</p>
@@ -76,6 +87,12 @@
           <td>○</td>
           <td>1-1: [送信] ボタンを押下した後、「入力エラー」というテキストリンクの見出しにフォーカスが移動することを確認<br />1-2：「入力エラー」を押下すると、エラーメッセージ「電話番号を正しく入力してください。」にフォーカスが移動することを確認<br />1-3：「電話番号を正しく入力してください。」を押下すると、「電話番号」のテキストフィールドにフォーカスが移動することを確認<br />1-4：「FAX番号を正しく入力してください。」を押下すると、「FAX番号」のテキストフィールドにフォーカスが移動することを確認</td>
           <td></td>
+        </tr>
+        <tr class="ok">
+          <td>Firefox 9.0</td>
+          <td>○</td>
+          <td>1.;任意の値を入力し、送信を押したあとに、以下の３つが表示されているか確認<br />‐リンクテキストで見出しの「入力エラー」<br />‐エラーメッセージ「電話番号を正しく入力してください。」 <br />‐エラーメッセージ「FAX番号を正しく入力してください。」<br />2-1: [送信] ボタンを押下した後、「入力エラー」というテキストリンクの見出しにフォーカスが移動することを確認<br />2-2: 「入力エラー」を押下すると、エラーメッセージ「電話番号を正しく入力してください。」にフォーカスが移動することを確認<br />2-3: 「電話番号を正しく入力してください。」を押下すると、「電話番号」のテキストフィールドにフォーカスが移動することを確認<br />2-4: 「FAX番号を正しく入力してください。」を押下すると、「FAX番号」のテキストフィールドにフォーカスが移動することを確認</td>
+          <td>1:○<br />2:○<br />3:○<br />4:○</td>
         </tr>
         <tr class="warn">
           <td>Safari 3.2</td>

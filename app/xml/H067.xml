@@ -1,4 +1,10 @@
 <description>
+  <SuccessCriteria>
+    <number>7.1.1.1</number>
+    <name>非テキストコンテンツに関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>HTMLandXHTML</testType>
   <rownumber>18</rownumber>
   <id>H067</id>
   <実装方法タイトル>支援技術が無視すべき画像の img 要素で、alt属性値を空にして、title 属性を付与しない</実装方法タイトル>
@@ -7,25 +13,6 @@
   <注意点>
     <body>スクリーンリーダーでは、NetReaderのみ画像のファイル名を読み上げてしまう。</body>
   </注意点>
-  <testResult>
-    <rownumber>25</rownumber>
-    <id>H067</id>
-    <result useragent="Internet Explorer 6.0">○</result>
-    <result useragent="Internet Explorer 7.0">○</result>
-    <result useragent="Internet Explorer 8.0">○</result>
-    <result useragent="Internet Explorer 9">○</result>
-    <result useragent="Firefox 3.5">○</result>
-    <result useragent="Firefox 4.0">○</result>
-    <result useragent="Safari 3.2">○</result>
-    <result useragent="Safari 5.0.3">○</result>
-    <result useragent="JAWS for Windows 9.0">○</result>
-    <result useragent="ホームページ・リーダー 3.04">○</result>
-    <result useragent="PC-Talker XP 3.06">○</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">×</result>
-    <result useragent="FocusTalk V3">○</result>
-    <result useragent="NVDA 2010.1j">○</result>
-    <result useragent="NVDA 2011.1">○</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>93</rownumber>
@@ -51,7 +38,7 @@
       <id>H067</id>
       <検証結果>○</検証結果>
       <操作手順>画像を以下のやり方で非表示にした。
-ツールメニュー＞インターネットオプション＞詳細設定＞マルチメディア
+ツール＞インターネットオプション＞詳細設定＞マルチメディア
 「画像を表示する」のチェックをオフにする
 代替テキストが表示されることを確認</操作手順>
     </result>
@@ -72,6 +59,15 @@
 ツールメニュー＞オプション＞コンテンツパネル
 「画像を自動的に読み込む」のチェックをオフにする
 代替テキストが表示されることを確認</操作手順>
+    </result>
+    <result useragent="Firefox 9.0">
+      <rownumber>93</rownumber>
+      <id>H067</id>
+      <検証結果>○</検証結果>
+      <操作手順>画像を以下のやり方で非表示にした。
+ツール＞オプション＞コンテンツ
+「画像を自動的に読み込む」のチェックをオフにする
+代替テキストが表示されないことを確認</操作手順>
     </result>
     <result useragent="Safari 3.2">
       <rownumber>93</rownumber>

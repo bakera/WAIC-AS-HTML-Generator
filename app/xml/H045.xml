@@ -1,4 +1,10 @@
 <description>
+  <SuccessCriteria>
+    <number>7.1.1.1</number>
+    <name>非テキストコンテンツに関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>HTMLandXHTML</testType>
   <rownumber>11</rownumber>
   <id>H045</id>
   <実装方法タイトル>longdesc属性を用いる</実装方法タイトル>
@@ -10,25 +16,6 @@
   <注意点>
     <body>ブラウザ、スクリーンリーダーにほとんどサポートされていない。また、利用者にもほとんど知られていないのが現状である。</body>
   </注意点>
-  <testResult>
-    <rownumber>18</rownumber>
-    <id>H045</id>
-    <result useragent="Internet Explorer 6.0">×</result>
-    <result useragent="Internet Explorer 7.0">×</result>
-    <result useragent="Internet Explorer 8.0">×</result>
-    <result useragent="Internet Explorer 9">×</result>
-    <result useragent="Firefox 3.5">×</result>
-    <result useragent="Firefox 4.0">×</result>
-    <result useragent="Safari 3.2">×</result>
-    <result useragent="Safari 5.0.3">×</result>
-    <result useragent="JAWS for Windows 9.0">○</result>
-    <result useragent="ホームページ・リーダー 3.04">○</result>
-    <result useragent="PC-Talker XP 3.06">×</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">×</result>
-    <result useragent="FocusTalk V3">×</result>
-    <result useragent="NVDA 2010.1j">×</result>
-    <result useragent="NVDA 2011.1">×</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>69</rownumber>
@@ -75,6 +62,16 @@
 「画像を自動的に読み込む」のチェックをオフにする。
 画像非表示にした際に、代替テキスト「会員数の遷移グラフ」は表示され、longdesc属性で指定しているH45-ref1.htmlへのリンクが提示されることを確認</操作手順>
       <備考>ツール→オプションから、コンテンツタブの画像を自動的に読み込むのチェックを外したところ、「会員数の遷移グラフ」テキストのみ表示され、リンクが表示されない。（前回同様）</備考>
+    </result>
+    <result useragent="Firefox 9.0">
+      <rownumber>69</rownumber>
+      <id>H045</id>
+      <検証結果>×</検証結果>
+      <操作手順>画像を以下のやり方で非表示にした。
+ツール＞オプション＞コンテンツ
+「画像を自動的に読み込む」のチェックをオフにする
+代替テキスト「会員数の遷移グラフ」が表示され、あわせてlongdesc属性で指定しているH45-ref1.htmlへのリンクが提示されるかを確認</操作手順>
+      <備考>×：代替テキストの「会員数の推移グラフ」が表示されるが、リンクが提示されなかった</備考>
     </result>
     <result useragent="Safari 3.2">
       <rownumber>69</rownumber>

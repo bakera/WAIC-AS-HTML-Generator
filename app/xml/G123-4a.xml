@@ -1,4 +1,10 @@
 <description>
+  <SuccessCriteria>
+    <number>7.2.4.1</number>
+    <name>ブロックスキップに関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>General</testType>
   <rownumber>4</rownumber>
   <id>G123-4a</id>
   <実装方法タイトル>繰り返しているコンテンツのブロックの開始位置に、そのブロックの終了位置へのリンクを追加する</実装方法タイトル>
@@ -10,25 +16,6 @@
   <注意点>
     <body>過度なスキップリンクの使用は、逆にアクセシビリティやユーザビリティを損なう恐れがあるので避けたほうがよい。</body>
   </注意点>
-  <testResult>
-    <rownumber>110</rownumber>
-    <id>G123-4a</id>
-    <result useragent="Internet Explorer 6.0">△</result>
-    <result useragent="Internet Explorer 7.0">△</result>
-    <result useragent="Internet Explorer 8.0">△</result>
-    <result useragent="Internet Explorer 9">△</result>
-    <result useragent="Firefox 3.5">○</result>
-    <result useragent="Firefox 4.0">○</result>
-    <result useragent="Safari 3.2">△</result>
-    <result useragent="Safari 5.0.3">△</result>
-    <result useragent="JAWS for Windows 9.0">○</result>
-    <result useragent="ホームページ・リーダー 3.04">○</result>
-    <result useragent="PC-Talker XP 3.06">×</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">○</result>
-    <result useragent="FocusTalk V3">△</result>
-    <result useragent="NVDA 2010.1j">○</result>
-    <result useragent="NVDA 2011.1">○</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>34</rownumber>
@@ -82,6 +69,15 @@
 4.キーボード操作 3：「ウルトラ サブ ナビゲーションをスキップ」を押下した後、Tabキーを押すとリンク「アクセシビリティ」にフォーカスが移動した。</操作手順>
     </result>
     <result useragent="Firefox 4.0">
+      <rownumber>34</rownumber>
+      <id>G123-4a</id>
+      <検証結果>○</検証結果>
+      <操作手順>1:4つのスキップリンクは常に表示されることを確認
+2:「メイン ナビゲーションをスキップ」を押下した後、Tabキーを押すと「サブ ナビゲーションをスキップ」にフォーカスが移動することを確認
+3:：「サブ ナビゲーションをスキップ」を押下した後、Tabキーを押すと「ウルトラ サブ ナビゲーションをスキップ」にフォーカスが移動することを確認
+4:：「ウルトラ サブ ナビゲーションをスキップ」を押下した後、Tabキーを押すとリンク「アクセシビリティ」にフォーカスが移動することを確認</操作手順>
+    </result>
+    <result useragent="Firefox 9.0">
       <rownumber>34</rownumber>
       <id>G123-4a</id>
       <検証結果>○</検証結果>

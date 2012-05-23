@@ -1,34 +1,23 @@
 <description>
-  <rownumber>4</rownumber>
+  <SuccessCriteria>
+    <number>7.1.1.1</number>
+    <name>非テキストコンテンツに関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <SuccessCriteria>
+    <number>7.2.4.4</number>
+    <name>文脈におけるリンクの目的に関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>HTMLandXHTML</testType>
+  <rownumber>3</rownumber>
   <id>H024</id>
   <実装方法タイトル>イメージマップのarea要素に代替テキストを提供する</実装方法タイトル>
-  <対象>イメージマップのarea要素のalt属性</対象>
+  <対象>area要素のalt属性</対象>
   <見解>達成可能</見解>
   <代替もしくは推奨する方法>
-    <body>画像非表示に設定している利用者を想定する場合には、イメージマップだけでなく、各ホットスポットと同じリンク先へのテキストリンクを提供するとよい。</body>
+    <body>IE 6、IE 7、IE 8、Firefox、Safari、Google Chromeでは画像を非表示にすると代替テキストが表示されない。そのため、画像非表示に設定しているユーザーを想定する場合には、イメージマップだけでなく、各ホットスポットと同じリンク先へのテキストリンクを提供するとよい。</body>
   </代替もしくは推奨する方法>
-  <注意点>
-    <body>IE 6、IE 7、IE 8、IE9、Firefox、Safari、Google Chromeでは画像を非表示にすると代替テキストが表示されない。</body>
-  </注意点>
-  <testResult>
-    <rownumber>5</rownumber>
-    <id>H024</id>
-    <result useragent="Internet Explorer 6.0">×</result>
-    <result useragent="Internet Explorer 7.0">×</result>
-    <result useragent="Internet Explorer 8.0">×</result>
-    <result useragent="Internet Explorer 9">×</result>
-    <result useragent="Firefox 3.5">×</result>
-    <result useragent="Firefox 4.0">×</result>
-    <result useragent="Safari 3.2">×</result>
-    <result useragent="Safari 5.0.3">×</result>
-    <result useragent="JAWS for Windows 9.0">○</result>
-    <result useragent="ホームページ・リーダー 3.04">○</result>
-    <result useragent="PC-Talker XP 3.06">○</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">○</result>
-    <result useragent="FocusTalk V3">○</result>
-    <result useragent="NVDA 2010.1j">○</result>
-    <result useragent="NVDA 2011.1">○</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>48</rownumber>
@@ -76,6 +65,16 @@ area要素のalt属性に記述した代替テキストは表示されること�
       <検証結果>×</検証結果>
       <操作手順>1:画像を以下のやり方で非表示にした。
 ツールメニュー＞オプション＞コンテンツパネル
+「画像を自動的に読み込む」のチェックをオフにする
+area要素のalt属性に記述した代替テキストは表示されることを確認</操作手順>
+      <備考>×：ブラウザの設定を画像非表示にした際に、代替テキスト「S棟（ソリューション）棟」及び「O棟（オフィス）棟」及び「C棟（共通）棟」は表示されず、「富士通ソリューションスクエアの建物配置図です。詳細については各建物を選んでご覧ください。」が表示された。</備考>
+    </result>
+    <result useragent="Firefox 9.0">
+      <rownumber>48</rownumber>
+      <id>H024</id>
+      <検証結果>×</検証結果>
+      <操作手順>画像を以下のやり方で非表示にした。
+ツール＞オプション＞コンテンツ
 「画像を自動的に読み込む」のチェックをオフにする
 area要素のalt属性に記述した代替テキストは表示されることを確認</操作手順>
       <備考>×：ブラウザの設定を画像非表示にした際に、代替テキスト「S棟（ソリューション）棟」及び「O棟（オフィス）棟」及び「C棟（共通）棟」は表示されず、「富士通ソリューションスクエアの建物配置図です。詳細については各建物を選んでご覧ください。」が表示された。</備考>

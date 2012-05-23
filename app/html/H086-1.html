@@ -6,22 +6,30 @@
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
     <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-    <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
+    <link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
     <title>アクセシビリティ・サポーテッド（AS）情報：H086-1</title>
     <style type="text/css">table{empty-cells: show;}</style>
   </head>
   <body>
     <div id="logo">
-      <a href="http://www.ciaj.or.jp/access/web/">
-        <img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
+      <a href="http://waic.jp/">
+        <img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
       </a>
     </div>
     <h1>アクセシビリティ・サポーテッド（AS）情報：H086-1</h1>
     <ul>
-      <li>公開日：2011年8月2日</li>
+      <li>公開日：2012年5月15日</li>
       <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
     </ul>
-    <h2>H086-1ASCIIアート、顔文字、及びリート語に代替テキストを提供する</h2>
+    <h2>H086-1: ASCIIアート、顔文字、及びリート語に代替テキストを提供する</h2>
+    <h3>関連する達成基準の実装方法一覧</h3>
+    <p>
+      <a href="7.1.1.1.html">7.1.1.1非テキストコンテンツに関する達成基準 (等級A)</a>
+    </p>
+    <h3>テストファイル</h3>
+    <p>
+      <a href="&#xA;http://waic.jp/docs/jis2010-as-tests/201008/A/HTMLandXHTML/H086-1.html">H086-1のテストファイル</a>
+    </p>
     <div class="ng">
       <h3>見解</h3>
       <p>達成不可能</p>
@@ -78,6 +86,12 @@
           <td>△</td>
           <td>1:顔文字「（＾＾）」に破線の下線がつき、補足説明があることを確認<br />2:顔文字「（＾＾）」にマウスポインタをおくと、ツールチップで「笑顔」と表示されることを確認<br />3:キーボード操作：何らかのキー操作により、顔文字「（＾＾）」にツールチップでtitle属性値「笑顔」が表示されるか確認。</td>
           <td>1:○<br />2:○<br />3:×：ツールチップが表示されない。</td>
+        </tr>
+        <tr class="warn">
+          <td>Firefox 9.0</td>
+          <td>△</td>
+          <td>1:顔文字「（＾＾）」に補足説明として破線の下線がついているかを確認<br />2:顔文字「（＾＾）」にマウスポインタをおくと、ツールチップで「笑顔」と表示されることを確認<br />3:キーボード操作：キー操作により、顔文字「（＾＾）」にツールチップでtitle属性値「笑顔」が表示されるか確認。</td>
+          <td>1:○<br />2:○<br />3:×：ツールチップを表示させるためのキー操作はない</td>
         </tr>
         <tr class="warn">
           <td>Safari 3.2</td>

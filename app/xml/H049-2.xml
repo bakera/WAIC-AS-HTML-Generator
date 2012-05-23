@@ -1,4 +1,10 @@
 <description>
+  <SuccessCriteria>
+    <number>7.1.3.1</number>
+    <name>情報及び関係性に関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>HTMLandXHTML</testType>
   <rownumber>14</rownumber>
   <id>H049-2</id>
   <実装方法タイトル>セマンティックなマークアップを用いて、強調又は特別なテキストをマークアップする</実装方法タイトル>
@@ -14,25 +20,6 @@ blockquote要素を使用する際には、文脈から引用部分であるこ�
 また、blockquote要素を用いずに、CSSだけで引用部分であることを示してはいけない。</body>
   </注意点>
   <備考>cite要素はスクリーンリーダーによるサポートが全くなく、blockquote要素をサポートしているのはJAWSとNVDAだけだが、使用することによる悪影響はなく、スクリーンリーダーによる今後の機能向上に期待する。</備考>
-  <testResult>
-    <rownumber>46</rownumber>
-    <id>H049-2</id>
-    <result useragent="Internet Explorer 6.0">○</result>
-    <result useragent="Internet Explorer 7.0">-</result>
-    <result useragent="Internet Explorer 8.0">○</result>
-    <result useragent="Internet Explorer 9">○</result>
-    <result useragent="Firefox 3.5">○</result>
-    <result useragent="Firefox 4.0">○</result>
-    <result useragent="Safari 3.2">○</result>
-    <result useragent="Safari 5.0.3">○</result>
-    <result useragent="JAWS for Windows 9.0">△</result>
-    <result useragent="ホームページ・リーダー 3.04">×</result>
-    <result useragent="PC-Talker XP 3.06">×</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">×</result>
-    <result useragent="FocusTalk V3">×</result>
-    <result useragent="NVDA 2010.1j">△</result>
-    <result useragent="NVDA 2011.1">△</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>74</rownumber>
@@ -78,6 +65,18 @@ blockquote要素を使用する際には、文脈から引用部分であるこ�
       <操作手順>1:表示メニュー＞スタイルシート＞「スタイルシートを使用しない」を選択して実施。
 「わが人生の物語」がイタリック表示、「ここが引用されている・・・」以降がインデントされ、他と区別がつくレンダリングになっていることを確認
 2:「ここが引用されている･･･」でインデントされ、他と区別がつくレンダリングになっていることを確認</操作手順>
+    </result>
+    <result useragent="Firefox 9.0">
+      <rownumber>74</rownumber>
+      <id>H049-2</id>
+      <検証結果>○</検証結果>
+      <操作手順>スタイルシート適用を以下のやり方でオフにした。
+表示＞スタイルシート
+「スタイルシートを使用しない」を選択して実施
+1:「わが人生の物語」がイタリック表示、「ここが引用されている・・・」以降がインデントされ、他と区別がつくレンダリングになっていることを確認
+2:「ここが引用されている･･･」でインデントされ、他と区別がつくレンダリングになっていることを確認</操作手順>
+      <備考>1:○
+2:○</備考>
     </result>
     <result useragent="Safari 3.2">
       <rownumber>74</rownumber>

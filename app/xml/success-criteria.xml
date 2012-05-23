@@ -61,14 +61,14 @@
       <id>7.2.1.1</id>
       <達成等級>A</達成等級>
       <name>キーボード操作に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>10</rownumber>
       <id>7.2.1.2</id>
       <達成等級>A</達成等級>
       <name>フォーカス移動に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>11</rownumber>
@@ -82,7 +82,7 @@
       <id>7.2.2.2</id>
       <達成等級>A</達成等級>
       <name>一時停止，停止及び非表示に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>13</rownumber>
@@ -110,21 +110,21 @@
       <id>7.2.4.3</id>
       <達成等級>A</達成等級>
       <name>フォーカス順序に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>17</rownumber>
       <id>7.2.4.4</id>
       <達成等級>A</達成等級>
       <name>文脈におけるリンクの目的に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>18</rownumber>
       <id>7.3.1.1</id>
       <達成等級>A</達成等級>
       <name>ページの言語に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>19</rownumber>
@@ -145,14 +145,14 @@
       <id>7.3.3.1</id>
       <達成等級>A</達成等級>
       <name>入力エラー箇所の特定に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>22</rownumber>
       <id>7.3.3.2</id>
       <達成等級>A</達成等級>
       <name>ラベル又は説明文に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>23</rownumber>
@@ -166,7 +166,7 @@
       <id>7.4.1.2</id>
       <達成等級>A</達成等級>
       <name>プログラムが解釈可能な識別名，役割及び設定可能な値に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
   </SuccessCriteriaGroup>
   <SuccessCriteriaGroup level="AA">
@@ -196,7 +196,7 @@
       <id>7.1.4.4</id>
       <達成等級>AA</達成等級>
       <name>テキストのサイズ変更に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>29</rownumber>
@@ -224,14 +224,14 @@
       <id>7.2.4.7</id>
       <達成等級>AA</達成等級>
       <name>視覚的に認識可能なフォーカスに関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>33</rownumber>
       <id>7.3.1.2</id>
       <達成等級>AA</達成等級>
       <name>部分的に用いられている言語に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>34</rownumber>
@@ -252,7 +252,7 @@
       <id>7.3.3.3</id>
       <達成等級>AA</達成等級>
       <name>入力エラー修正方法の提示に関する達成基準</name>
-      <ファイル有無>False</ファイル有無>
+      <ファイル有無>True</ファイル有無>
     </item>
     <item>
       <rownumber>37</rownumber>

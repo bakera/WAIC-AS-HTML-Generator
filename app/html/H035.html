@@ -6,22 +6,30 @@
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
     <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-    <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
+    <link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
     <title>アクセシビリティ・サポーテッド（AS）情報：H035</title>
     <style type="text/css">table{empty-cells: show;}</style>
   </head>
   <body>
     <div id="logo">
-      <a href="http://www.ciaj.or.jp/access/web/">
-        <img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
+      <a href="http://waic.jp/">
+        <img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
       </a>
     </div>
     <h1>アクセシビリティ・サポーテッド（AS）情報：H035</h1>
     <ul>
-      <li>公開日：2011年8月2日</li>
+      <li>公開日：2012年5月15日</li>
       <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
     </ul>
-    <h2>H035applet要素に代替テキストを提供する</h2>
+    <h2>H035: applet要素に代替テキストを提供する</h2>
+    <h3>関連する達成基準の実装方法一覧</h3>
+    <p>
+      <a href="7.1.1.1.html">7.1.1.1非テキストコンテンツに関する達成基準 (等級A)</a>
+    </p>
+    <h3>テストファイル</h3>
+    <p>
+      <a href="&#xA;http://waic.jp/docs/jis2010-as-tests/201008/A/HTMLandXHTML/H035.html">H035のテストファイル</a>
+    </p>
     <div class="warn">
       <h3>見解</h3>
       <p>要注意</p>
@@ -64,7 +72,7 @@
         <tr class="ok">
           <td>Internet Explorer 9</td>
           <td>○</td>
-          <td>以下のやり方でappletを非表示にする<br />&gt; ツール &gt; インターネットオプション &gt; セキュリティ &gt; レベルのカスタマイズ &gt; スクリプト &gt; アクティブスクリプトのラジオボタンを切り替える<br />アプレットを非表示にした際に、alt属性「三目並べゲーム(alt属性値)」又はapplet要素のボディに記述した代替テキスト「三目並べゲーム(applet要素のボディ)」が表示されるかを確認</td>
+          <td>以下のやり方でappletを非表示にする<br />ツール &gt; インターネットオプション &gt; セキュリティ &gt; レベルのカスタマイズ &gt; スクリプト &gt; アクティブスクリプトのラジオボタンを切り替える<br />アプレットを非表示にした際に、alt属性「三目並べゲーム(alt属性値)」又はapplet要素のボディに記述した代替テキスト「三目並べゲーム(applet要素のボディ)」が表示されるかを確認</td>
           <td></td>
         </tr>
         <tr class="ok">
@@ -77,6 +85,12 @@
           <td>Firefox 4.0</td>
           <td>○</td>
           <td>Javaアプレットを以下の方法で無効にした<br />ツールメニュー＞オプション＞コンテンツパネル<br />「Javaを有効にする」のチェックをオフにする<br />1:「三目並べゲーム(applet要素のボディ)」と表示されることを確認</td>
+          <td></td>
+        </tr>
+        <tr class="ok">
+          <td>Firefox 9.0</td>
+          <td>○</td>
+          <td>以下のやり方でappletを非表示（無効）にする<br />&gt; ツール &gt; アドオン &gt; プラグイン &gt; Java? Platform SE 6 を無効化。<br />アプレットを非表示（無効）にした際に、alt属性「三目並べゲーム(alt属性値)」又はapplet要素のボディに記述した代替テキスト「三目並べゲーム(applet要素のボディ)」が表示されるかを確認</td>
           <td></td>
         </tr>
         <tr class="ok">

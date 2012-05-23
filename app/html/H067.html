@@ -6,22 +6,30 @@
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
     <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-    <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
+    <link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
     <title>アクセシビリティ・サポーテッド（AS）情報：H067</title>
     <style type="text/css">table{empty-cells: show;}</style>
   </head>
   <body>
     <div id="logo">
-      <a href="http://www.ciaj.or.jp/access/web/">
-        <img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
+      <a href="http://waic.jp/">
+        <img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
       </a>
     </div>
     <h1>アクセシビリティ・サポーテッド（AS）情報：H067</h1>
     <ul>
-      <li>公開日：2011年8月2日</li>
+      <li>公開日：2012年5月15日</li>
       <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
     </ul>
-    <h2>H067支援技術が無視すべき画像の img 要素で、alt属性値を空にして、title 属性を付与しない</h2>
+    <h2>H067: 支援技術が無視すべき画像の img 要素で、alt属性値を空にして、title 属性を付与しない</h2>
+    <h3>関連する達成基準の実装方法一覧</h3>
+    <p>
+      <a href="7.1.1.1.html">7.1.1.1非テキストコンテンツに関する達成基準 (等級A)</a>
+    </p>
+    <h3>テストファイル</h3>
+    <p>
+      <a href="&#xA;http://waic.jp/docs/jis2010-as-tests/201008/A/HTMLandXHTML/H067.html">H067のテストファイル</a>
+    </p>
     <div class="ok">
       <h3>見解</h3>
       <p>達成可能</p>
@@ -62,7 +70,7 @@
         <tr class="ok">
           <td>Internet Explorer 9</td>
           <td>○</td>
-          <td>画像を以下のやり方で非表示にした。<br />ツールメニュー＞インターネットオプション＞詳細設定＞マルチメディア<br />「画像を表示する」のチェックをオフにする<br />代替テキストが表示されることを確認</td>
+          <td>画像を以下のやり方で非表示にした。<br />ツール＞インターネットオプション＞詳細設定＞マルチメディア<br />「画像を表示する」のチェックをオフにする<br />代替テキストが表示されることを確認</td>
           <td></td>
         </tr>
         <tr class="ok">
@@ -75,6 +83,12 @@
           <td>Firefox 4.0</td>
           <td>○</td>
           <td>1:画像を以下のやり方で非表示にした。<br />ツールメニュー＞オプション＞コンテンツパネル<br />「画像を自動的に読み込む」のチェックをオフにする<br />代替テキストが表示されることを確認</td>
+          <td></td>
+        </tr>
+        <tr class="ok">
+          <td>Firefox 9.0</td>
+          <td>○</td>
+          <td>画像を以下のやり方で非表示にした。<br />ツール＞オプション＞コンテンツ<br />「画像を自動的に読み込む」のチェックをオフにする<br />代替テキストが表示されないことを確認</td>
           <td></td>
         </tr>
         <tr class="ok">

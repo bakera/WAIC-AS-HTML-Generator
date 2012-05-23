@@ -14,16 +14,16 @@
 <meta name="robots" content="index, follow" />
 <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
 <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-<link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
-<title>アクセシビリティ・サポーテッド（AS）情報：2011年7月版 <xsl:value-of select="/AsDescription/@target" /></title>
+<link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
+<title>アクセシビリティ・サポーテッド（AS）情報：2012年5月版 <xsl:value-of select="/AsDescription/@target" /></title>
 <style type="text/css">table{empty-cells: show;}tr.warn{background: #ffd;}tr.ng{background: #fdd;}</style>
 </head>
 <body>
-<div id="logo"><a href="http://www.ciaj.or.jp/access/web/"><img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" /></a></div>
-<h1>アクセシビリティ・サポーテッド（AS）情報：2011年7月版</h1>
+<div id="logo"><a href="http://waic.jp/"><img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" /></a></div>
+<h1>アクセシビリティ・サポーテッド（AS）情報：2012年5月版</h1>
 
 <ul>
-<li>公開日：2011年8月2日</li>
+<li>公開日：2012年5月15日</li>
 <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
 </ul>
 

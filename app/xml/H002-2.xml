@@ -1,5 +1,16 @@
 <description>
-  <rownumber>3</rownumber>
+  <SuccessCriteria>
+    <number>7.1.1.1</number>
+    <name>非テキストコンテンツに関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <SuccessCriteria>
+    <number>7.2.4.4</number>
+    <name>文脈におけるリンクの目的に関する達成基準</name>
+    <level>A</level>
+  </SuccessCriteria>
+  <testType>HTMLandXHTML</testType>
+  <rownumber>2</rownumber>
   <id>H002-2</id>
   <実装方法タイトル>隣り合った画像とテキストリンクを同じリンクの中に入れる</実装方法タイトル>
   <対象>a要素内にあるimg要素のalt属性</対象>
@@ -11,25 +22,6 @@
     <body>画像が装飾を目的にしていて、そのalt属性値が空の場合には問題ない。
 ただし、alt属性値に代替テキストが記述されている場合、スクリーンリーダーのPC-Talker XPとNetReaderではその代替テキストが読み上げられないので注意が必要。</body>
   </注意点>
-  <testResult>
-    <rownumber>4</rownumber>
-    <id>H002-2</id>
-    <result useragent="Internet Explorer 6.0">○</result>
-    <result useragent="Internet Explorer 7.0">○</result>
-    <result useragent="Internet Explorer 8.0">○</result>
-    <result useragent="Internet Explorer 9">○</result>
-    <result useragent="Firefox 3.5">○</result>
-    <result useragent="Firefox 4.0">○</result>
-    <result useragent="Safari 3.2">×</result>
-    <result useragent="Safari 5.0.3">×</result>
-    <result useragent="JAWS for Windows 9.0">○</result>
-    <result useragent="ホームページ・リーダー 3.04">○</result>
-    <result useragent="PC-Talker XP 3.06">×</result>
-    <result useragent="PC-Talker XP 3.06 + NetReader 1.18">△</result>
-    <result useragent="FocusTalk V3">×</result>
-    <result useragent="NVDA 2010.1j">○</result>
-    <result useragent="NVDA 2011.1">○</result>
-  </testResult>
   <testDetail>
     <result useragent="Internet Explorer 6.0">
       <rownumber>43</rownumber>
@@ -67,6 +59,12 @@
       <id>H002-2</id>
       <検証結果>○</検証結果>
       <操作手順>1:アイコン画像の代わりに、代替テキスト「富士通株式会社」が表示されることを確認</操作手順>
+    </result>
+    <result useragent="Firefox 9.0">
+      <rownumber>43</rownumber>
+      <id>H002-2</id>
+      <検証結果>○</検証結果>
+      <操作手順>アイコン画像の代わりに、代替テキスト「富士通株式会社」が表示されることを確認</操作手順>
     </result>
     <result useragent="Safari 3.2">
       <rownumber>43</rownumber>

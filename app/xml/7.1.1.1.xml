@@ -1,5 +1,6 @@
 <AsDescription target="7.1.1.1">
   <SuccessCriteria>
+    <number>7.1.1.1</number>
     <name>非テキストコンテンツに関する達成基準</name>
     <level>A</level>
   </SuccessCriteria>

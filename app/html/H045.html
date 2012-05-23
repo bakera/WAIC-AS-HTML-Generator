@@ -6,22 +6,30 @@
     <meta name="robots" content="index, follow" />
     <meta name="keywords" content="ウェブ,アクセシビリティ,基盤,委員会,WAIC,web,accessibility,infrastructure,committee,アクセシビリティ,サポーテッド,AS,情報" />
     <meta name="description" content="アクセシビリティ・サポーテッド（AS）情報に関する解説文書" />
-    <link rel="stylesheet" type="text/css" href="http://www.ciaj.or.jp/access/web/cmn/css/docs.css" />
+    <link rel="stylesheet" type="text/css" href="http://waic.jp/cmn/css/docs.css" />
     <title>アクセシビリティ・サポーテッド（AS）情報：H045</title>
     <style type="text/css">table{empty-cells: show;}</style>
   </head>
   <body>
     <div id="logo">
-      <a href="http://www.ciaj.or.jp/access/web/">
-        <img src="http://www.ciaj.or.jp/access/web/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
+      <a href="http://waic.jp/">
+        <img src="http://waic.jp/cmn/img/header/logo.png" alt="ウェブアクセシビリティ基盤委員会 / WAIC: Web Accessibility Infrastructure Committee" width="334" height="77" />
       </a>
     </div>
     <h1>アクセシビリティ・サポーテッド（AS）情報：H045</h1>
     <ul>
-      <li>公開日：2011年8月2日</li>
+      <li>公開日：2012年5月15日</li>
       <li>作成者：ウェブアクセシビリティ基盤委員会（WAIC）実装ワーキンググループ（WG2）</li>
     </ul>
-    <h2>H045longdesc属性を用いる</h2>
+    <h2>H045: longdesc属性を用いる</h2>
+    <h3>関連する達成基準の実装方法一覧</h3>
+    <p>
+      <a href="7.1.1.1.html">7.1.1.1非テキストコンテンツに関する達成基準 (等級A)</a>
+    </p>
+    <h3>テストファイル</h3>
+    <p>
+      <a href="&#xA;http://waic.jp/docs/jis2010-as-tests/201008/A/HTMLandXHTML/H045.html">H045のテストファイル</a>
+    </p>
     <div class="ng">
       <h3>見解</h3>
       <p>達成不可能</p>
@@ -78,6 +86,12 @@
           <td>×</td>
           <td>1:画像を以下のやり方で非表示。<br />ツールメニュー＞オプション＞コンテンツパネル<br />「画像を自動的に読み込む」のチェックをオフにする。<br />画像非表示にした際に、代替テキスト「会員数の遷移グラフ」は表示され、longdesc属性で指定しているH45-ref1.htmlへのリンクが提示されることを確認</td>
           <td>ツール→オプションから、コンテンツタブの画像を自動的に読み込むのチェックを外したところ、「会員数の遷移グラフ」テキストのみ表示され、リンクが表示されない。（前回同様）</td>
+        </tr>
+        <tr class="ng">
+          <td>Firefox 9.0</td>
+          <td>×</td>
+          <td>画像を以下のやり方で非表示にした。<br />ツール＞オプション＞コンテンツ<br />「画像を自動的に読み込む」のチェックをオフにする<br />代替テキスト「会員数の遷移グラフ」が表示され、あわせてlongdesc属性で指定しているH45-ref1.htmlへのリンクが提示されるかを確認</td>
+          <td>×：代替テキストの「会員数の推移グラフ」が表示されるが、リンクが提示されなかった</td>
         </tr>
         <tr class="ng">
           <td>Safari 3.2</td>
